@@ -35,4 +35,25 @@ var WORLD = WORLD || {};
         // Board will still need to be seeded at this point
     };
 
+    WORLD.Game.prototype.mapWholeBoard = function (fnEach, done, thisArg) {
+        var i, j, w, h, val, returnedVal;
+        thisArg = thisArg || this;
+        for (i = 0, w = this.getWidth(); i < w; ++i) {
+            for (j = 0, h = this.getHeight(); j < h; ++j) {
+                val = this._board[i][j];
+                returnedVal = fnEach.call(thisArg, val, i, j);
+
+                // We assume that if the user passes a value back that is not
+                // false, it will an acceptable value.
+                // This is a sacrifice of some robustness for better performance.
+                if (returnedVal !== undefined && returnedVal !== false) {
+                    this._board[i][j] = returnedVal;
+                }
+            }
+        }
+        if (done) {
+            done.call(thisArg);
+        }
+    };
+
 })();
