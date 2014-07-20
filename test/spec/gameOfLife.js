@@ -89,4 +89,16 @@ describe('Game', function () {
     });
   });
 
+  describe('.HTMLify', function () {
+    it('should return a string of values with \'<br>\'s', function () {
+      var boardSize = 2,
+          game = new WORLD.Game(boardSize);
+      game.seedZero();
+
+      var html = game.HTMLify();
+      expect(html).to.be.a('string');
+      expect(html.match(/(<br>)/g).length).to.equal(boardSize);
+    });
+  });
+
 });

@@ -70,4 +70,14 @@ var WORLD = WORLD || {};
         });
     };
 
+    WORLD.Game.prototype.HTMLify = function () {
+        var i, j, w, h, HTMLstring = '';
+        for (i = 0, w = this.getWidth(); i < w; ++i) {
+            for (j = 0, h = this.getHeight(); j < h; ++j) {
+                HTMLstring += this._board[i][j] + ' ';
+            }
+            HTMLstring += '<br>';
+        }
+        return HTMLstring;
+    };
 })();
