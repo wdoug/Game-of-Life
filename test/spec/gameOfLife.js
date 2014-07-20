@@ -77,4 +77,16 @@ describe('Game', function () {
     });
   });
 
+  describe('.seedZero', function () {
+    it('should set all the board values to 0', function () {
+      var game = new WORLD.Game(2);
+
+      game.seedZero();
+      expect(game._board[0][0]).to.equal(0);
+      expect(game._board[0][1]).to.equal(0);
+      expect(game._board[1][0]).to.equal(0);
+      expect(game._board[1][1]).to.equal(0);
+    });
+  });
+
 });
