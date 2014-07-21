@@ -1,7 +1,7 @@
 var WORLD = WORLD || {};
 
 (function () {
-    var game = new WORLD.Game();
+    var game = new WORLD.Game(50);
     var $display = $('#board-display');
 
     game.seedRandom();
@@ -9,5 +9,5 @@ var WORLD = WORLD || {};
     setInterval(function () {
         game.tick();
         $display.html( game.HTMLify() );
-    }, 500);
+    }, 50);
 })();

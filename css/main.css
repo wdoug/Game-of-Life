@@ -60,10 +60,15 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-
-
-
+body {
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+#board-display {
+    color: rgb(12, 208, 12);
+    /*font-size: 8px;*/
+}
 
 
 
