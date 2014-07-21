@@ -103,7 +103,7 @@ describe('Game', function () {
         expect(currBoard[0][0]).to.equal(0);
         expect(currBoard[0][1]).to.equal(0);
         expect(currBoard[1][0]).to.equal(0);
-        expect(currBoard[boardHeight-1][boardWidth-1]).to.equal(0);
+        expect(currBoard[boardWidth-1][boardHeight-1]).to.equal(0);
         done();
       });
     });

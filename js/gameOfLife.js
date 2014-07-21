@@ -19,10 +19,10 @@ var WORLD = WORLD || {};
         return false;
     }
 
-    WORLD.Game = function (width, height) {
+    WORLD.Game = function (height, width) {
         var defaultBoardSize = WORLD.config.defaults.boardSize,
-            _width = checkIfValidBoardSize(width) || defaultBoardSize,
-            _height = checkIfValidBoardSize(height) || _width;
+            _height = checkIfValidBoardSize(height) || defaultBoardSize,
+            _width = checkIfValidBoardSize(width) || _height;
 
         // Since there presumably won't be many instances of Game it was worth
         // it to have these functions defined in each instance.
