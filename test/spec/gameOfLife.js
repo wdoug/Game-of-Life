@@ -153,4 +153,48 @@ describe('Game', function () {
     });
   });
 
+  describe('.getValueIfItExistsAt', function () {
+    var game, currBoard;
+    beforeEach(function() {
+      game = new WORLD.Game(2,1);
+      currBoard = game.currentBoard;
+    });
+
+    it('should return 0 if out of bounds', function () {
+      var outOfBoundsPairs = [[-1,0], [1,-1], [2,0]];
+
+      $.each(outOfBoundsPairs, function (index, value) {
+        expect(game.getValueIfItExistsAt(value[0], value[1], currBoard)).to.equal(0);
+      });
+    });
+
+    it('should return the value if it exists', function () {
+      game.currentBoard[1][0] = 1;
+
+      expect(game.getValueIfItExistsAt(1, 0,currBoard)).to.equal(1);
+    });
+  });
+
+  describe('.tick', function () {
+    it('should update the state of the board based on the \'rules of life\'',
+            function () {
+      var game = new WORLD.Game(5),
+          initBoard =  [[0, 1, 0, 0, 0],
+                        [1, 0, 0, 1, 1],
+                        [1, 1, 0, 0, 1],
+                        [0, 1, 0, 0, 0],
+                        [1, 0, 0, 0, 1]],
+
+          boardResult =[[0, 0, 0, 0, 0],
+                        [1, 0, 1, 1, 1],
+                        [1, 1, 1, 1, 1],
+                        [0, 1, 0, 0, 0],
+                        [0, 0, 0, 0, 0]];
+
+      game.currentBoard = initBoard;
+      game.tick();
+
+      expect(game.currentBoard).to.eql(boardResult);
+    });
+  });
 });
