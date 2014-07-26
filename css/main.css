@@ -65,9 +65,9 @@ body {
     text-align: center;
     color: white;
 }
-#board-display {
+#text-board-display {
     color: rgb(12, 208, 12);
-    /*font-size: 8px;*/
+    text-rendering: optimizeSpeed;
 }
 
 

@@ -2,7 +2,7 @@ var WORLD = WORLD || {};
 
 (function () {
     var game = new WORLD.Game(50);
-    var $display = $('#board-display');
+    var $display = $('#text-board-display');
 
     game.seedRandom();
 
