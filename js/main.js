@@ -8,6 +8,6 @@ var WORLD = WORLD || {};
 
     setInterval(function () {
         game.tick();
-        $display.html( game.HTMLify() );
+        $display.html( game.stringify() );
     }, 50);
 })();

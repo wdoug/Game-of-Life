@@ -1,0 +1,23 @@
+{
+  "name": "Game-of-Life",
+  "version": "0.0.0",
+  "homepage": "https://github.com/wdoug/Game-of-Life",
+  "authors": [
+    "Willy Douglas <willygdouglas@gmail.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "js/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "benchmark": "~1.0.0",
+    "normalize.css": "~3.0.1"
+  }
+}

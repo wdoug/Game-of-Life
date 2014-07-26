@@ -110,6 +110,18 @@ var WORLD = WORLD || {};
         return HTMLstring;
     };
 
+    WORLD.Game.prototype.stringify = function () {
+        var i, j, w, h, string = '';
+
+        for (i = 0, h = this.getHeight(); i < h; ++i) {
+            for (j = 0, w = this.getWidth(); j < w; ++j) {
+                string += this.currentBoard[i][j] + ' ';
+            }
+            string += '\n';
+        }
+        return string;
+    };
+
     WORLD.Game.prototype.getValueIfItExistsAt = function (i, j, board) {
         return (board[i] && board[i][j]) || 0;
     }
