@@ -36,11 +36,8 @@ var perf = perf || {};
       $benchStatus.html( opsPerSec );
     },
     complete: function (suiteId) {
-      console.log(suiteId);
-      console.log(this.filter('fastest').pluck('name') + ' is the fastest');
-
       var $suiteDiv = $('#'+suiteId);
-      $suiteDiv.find('.result').html('Fastest is ' + this.filter('fastest').pluck('name'));
+      $suiteDiv.find('.result').html(this.filter('fastest').pluck('name') + ' is the fastest');
     }
   };
 

@@ -124,7 +124,7 @@ var WORLD = WORLD || {};
 
     WORLD.Game.prototype.getValueIfItExistsAt = function (i, j, board) {
         return (board[i] && board[i][j]) || 0;
-    }
+    };
 
     // Updates board to next frame
     WORLD.Game.prototype.tick = function () {
