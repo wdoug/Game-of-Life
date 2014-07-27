@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "benchmark": "~1.0.0",
-    "normalize.css": "~3.0.1"
+    "normalize.css": "~3.0.1",
+    "es5-shim": "~4.0.1"
   }
 }
