@@ -160,26 +160,4 @@ describe('Game', function () {
     });
   });
 
-  describe('.tick', function () {
-    it('should update the state of the board based on the \'rules of life\'',
-            function () {
-      var game = new WORLD.Game(5),
-          initBoard =  [[0, 1, 0, 0, 0],
-                        [1, 0, 0, 1, 1],
-                        [1, 1, 0, 0, 1],
-                        [0, 1, 0, 0, 0],
-                        [1, 0, 0, 0, 1]],
-
-          boardResult =[[0, 0, 0, 0, 0],
-                        [1, 0, 1, 1, 1],
-                        [1, 1, 1, 1, 1],
-                        [0, 1, 0, 0, 0],
-                        [0, 0, 0, 0, 0]];
-
-      game.currentBoard = initBoard;
-      game.tick();
-
-      expect(game.currentBoard).to.eql(boardResult);
-    });
-  });
 });
