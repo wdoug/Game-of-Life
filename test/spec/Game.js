@@ -133,7 +133,7 @@ describe('Game', function () {
 
       game.seedZero();
 
-      currBoard = game.currentBoard
+      currBoard = game.currentBoard;
       expect(currBoard[0][0]).to.equal(0);
       expect(currBoard[0][1]).to.equal(0);
       expect(currBoard[1][0]).to.equal(0);
