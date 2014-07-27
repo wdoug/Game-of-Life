@@ -126,21 +126,6 @@ describe('Game', function () {
     });
   });
 
-  describe('.seedZero', function () {
-    it('should set all the current board values to 0', function () {
-      var game = new WORLD.Game(2),
-          currBoard;
-
-      game.seedZero();
-
-      currBoard = game.currentBoard;
-      expect(currBoard[0][0]).to.equal(0);
-      expect(currBoard[0][1]).to.equal(0);
-      expect(currBoard[1][0]).to.equal(0);
-      expect(currBoard[1][1]).to.equal(0);
-    });
-  });
-
   describe('.HTMLify', function () {
     it('should return a string of values with \'<br>\'s', function () {
       var boardWidth = 2,
