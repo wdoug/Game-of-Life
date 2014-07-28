@@ -24,9 +24,51 @@ var perf = perf || {};
   };
 
   perf.addSuite('Seed', {
-    seedZero: function () { game.seedZero(); },
-    seedRandom: function () { game.seedRandom(); }
+    seedZero: function () {
+      game.seedZero();
+    },
+    seedRandom: function () {
+      game.seedRandom();
+    }
   }, seedOptions);
+
+
+  var algorithmOptions = {
+    setup: function () {
+      var game = new WORLD.Game(5);
+      game.currentBoard =  [[0, 1, 0, 0, 0],
+                            [1, 0, 0, 1, 1],
+                            [1, 1, 0, 0, 1],
+                            [0, 1, 0, 0, 0],
+                            [1, 0, 0, 0, 1]];
+    }
+  };
+
+  perf.addSuite('Game Algorithm 5x5', {
+    map: function () {
+      game.algMap();
+    },
+    edgesSeparate: function () {
+      game.algEdgesSeparate();
+    }
+  }, seedOptions);
+
+
+  var largerBoardOptions = {
+    setup: function () {
+      var game = new WORLD.Game(20);
+      game.seedRandom();
+    }
+  };
+
+  perf.addSuite('Game Algorithm 20x20 random seed', {
+    map: function () {
+      game.algMap();
+    },
+    edgesSeparate: function () {
+      game.algEdgesSeparate();
+    }
+  }, largerBoardOptions);
 
 
   perf.renderSuites();

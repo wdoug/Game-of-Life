@@ -79,7 +79,7 @@ var perf = perf || {};
 
         onError: function (err) {
           console.log('err');
-          console.dir(err);
+          console.error(err);
         },
         'onComplete': function () {
           console.log('done');
