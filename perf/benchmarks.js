@@ -1,6 +1,11 @@
+/*
+* This file defines benchmark suites to compare the performance of different
+* functions used by the game of life.
+*/
+
 /* global WORLD */
 
-// Since Benchmark 'compiles' code so that setup function code runs before
+// @NOTE: Since Benchmark 'compiles' code so that setup function code runs before
 // specific benchmark code, variables are defined in one function scope,
 // and used in another. Because of this, I have disabled the jshint warnings
 // for these issues on this file.

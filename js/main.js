@@ -1,3 +1,8 @@
+/*
+* This file is the entry point to the index page that actually runs
+* and displays the game of life.
+*/
+
 'use strict';
 
 var WORLD = WORLD || {};
@@ -8,6 +13,7 @@ var WORLD = WORLD || {};
 
     game.seedRandom();
 
+    // @TODO: Look into swapping this with the requestAnimationFrame api
     setInterval(function () {
         game.tick();
         $display.html( game.stringify() );

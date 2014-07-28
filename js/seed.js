@@ -1,3 +1,8 @@
+/*
+* This file defines deferent methods for setting the initial state of the
+* game of life board.
+*/
+
 'use strict';
 
 var WORLD = WORLD || {};

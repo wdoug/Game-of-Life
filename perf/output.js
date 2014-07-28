@@ -1,3 +1,8 @@
+/*
+* This file defines the logic for adding benchmark suites, and displaying
+* their output to the browser.
+*/
+
 'use strict';
 
 var perf = perf || {};
@@ -92,6 +97,7 @@ var perf = perf || {};
 
   // @TODO: This is getting pretty messy.
   // Consider refactoring this into some sort of templating handler.
+  // May also want to externalize customer facing labels to config file.
   perf.renderSuites = function () {
     var i, j,
         fragment = document.createDocumentFragment(),

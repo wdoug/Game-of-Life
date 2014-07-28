@@ -1,3 +1,8 @@
+/*
+* This file defines the constructor for WORLD.Game. This Game constructor
+* creates a game object that stores and updates the game of life board.
+*/
+
 'use strict';
 
 var WORLD = WORLD || {};

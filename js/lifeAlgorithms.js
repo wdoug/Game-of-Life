@@ -1,3 +1,8 @@
+/*
+* This file difines different algorithms that can be used to update the
+* game of life board to the next generation.
+*/
+
 'use strict';
 
 var WORLD = WORLD || {};
