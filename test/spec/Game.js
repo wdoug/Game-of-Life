@@ -79,7 +79,7 @@ describe('Game', function () {
       game = new WORLD.Game(boardWidth, boardHeight);
     });
 
-    it('should iterate through each point in the current board', function (done) {
+    it('should iterate through each point in the current board', function () {
       var count = 0;
 
       game.currentBoard[0][1] = 1;
@@ -89,40 +89,35 @@ describe('Game', function () {
         if (i === 0 && j === 1) {
           expect(val).to.equal(1);
         }
-      }, function () {
-        expect(count).to.equal(boardWidth*boardHeight);
-        done();
       });
+
+      expect(count).to.equal(boardWidth*boardHeight);
     });
 
-    it('should be able to set board values', function (done) {
+    it('should be able to set board values', function () {
       game.mapWholeBoard(function () {
         return 0;
-      }, function () {
-        var currBoard = game.currentBoard;
-        expect(currBoard[0][0]).to.equal(0);
-        expect(currBoard[0][1]).to.equal(0);
-        expect(currBoard[1][0]).to.equal(0);
-        expect(currBoard[boardWidth-1][boardHeight-1]).to.equal(0);
-        done();
       });
+
+      var currBoard = game.currentBoard;
+      expect(currBoard[0][0]).to.equal(0);
+      expect(currBoard[0][1]).to.equal(0);
+      expect(currBoard[1][0]).to.equal(0);
+      expect(currBoard[boardWidth-1][boardHeight-1]).to.equal(0);
     });
 
     it('should be able to pass \'this\' context', function () {
-        var doneReturnValue = 0;
+      var doneReturnValue = 0;
 
-        this.testContext = function () {
-          return 1;
-        };
+      this.testContext = function () {
+        return 1;
+      };
 
-        game.mapWholeBoard(function () {
-          return this.testContext();
-        }, function () {
-          doneReturnValue = this.testContext();
-        }, this);
+      game.mapWholeBoard(function () {
+        return this.testContext();
+      }, this);
 
-        expect(game.currentBoard[0][0]).to.equal(1);
-        expect(doneReturnValue).to.equal(1);
+      expect(game.currentBoard[0][0]).to.equal(1);
     });
   });
 

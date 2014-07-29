@@ -65,7 +65,7 @@ var WORLD = WORLD || {};
         }
     };
 
-    WORLD.Game.prototype.mapWholeBoard = function (fnEach, done, thisArg) {
+    WORLD.Game.prototype.mapWholeBoard = function (fnEach, thisArg) {
         var i, j, w, h, val, returnedVal;
         thisArg = thisArg || this;
 
@@ -83,10 +83,6 @@ var WORLD = WORLD || {};
             }
         }
         this.updateBoard();
-
-        if (done) {
-            done.call(thisArg);
-        }
     };
 
 
