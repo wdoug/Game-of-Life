@@ -13,3 +13,8 @@ nav a:hover {
 nav a:first-child {
     border-left: none;
 }
+
+button:active {
+    -webkit-box-shadow: inset 0px 10px 30px rgba(0,0,0,0.2);
+    box-shadow:         inset 0px 10px 30px rgba(0,0,0,0.2);
+}

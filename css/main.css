@@ -70,6 +70,40 @@ body {
     text-rendering: optimizeSpeed;
 }
 
+/* @NOTE: css gradient generated using: http://www.colorzilla.com/gradient-editor/*/
+#new-board-btn {
+    background: #9cd170; /* Old browsers */
+    background: -moz-linear-gradient(top,  #9cd170 0%, #0db201 24%, #97ba84 98%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9cd170), color-stop(24%,#0db201), color-stop(98%,#97ba84)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #9cd170 0%,#0db201 24%,#97ba84 98%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #9cd170 0%,#0db201 24%,#97ba84 98%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #9cd170 0%,#0db201 24%,#97ba84 98%); /* IE10+ */
+    background: linear-gradient(to bottom,  #9cd170 0%,#0db201 24%,#97ba84 98%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9cd170', endColorstr='#97ba84',GradientType=0 ); /* IE6-9 */
+
+
+    border: none;
+    padding: 5px 20px;
+    border-radius: 3px;
+}
+
+#new-form {
+    color: rgb(12, 208, 12);
+    background-color: #333;
+    margin: 10px;
+    border-radius: 3px;
+    display: inline;
+    padding: 20px;
+}
+#new-form input {
+    width: 50px;
+    background-color: #666;
+    border: none;
+    padding: 4px;
+    border-radius: 3px;
+    color: white;
+    margin-right: 10px;
+}
 
 
 

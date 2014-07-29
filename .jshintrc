@@ -18,6 +18,7 @@
   "smarttabs": true,
   "globals": {
     "Benchmark": false,
-    "console": false
+    "console": false,
+    "alert": false
   }
 }
