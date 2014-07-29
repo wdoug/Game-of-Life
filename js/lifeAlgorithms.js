@@ -59,39 +59,29 @@ var WORLD = WORLD || {};
     }
 
     function handleCorners(height, width, currBoard, nextBoard) {
-        // Cell 0,0
         var bottom = height - 1,
             right = width - 1,
+            self,
+            n;
 
-            self = currBoard[0][0],
-            n = 0;
-        n += currBoard[0][1];
-        n += currBoard[1][1];
-        n += currBoard[1][0];
+        // Cell 0,0
+        self = currBoard[0][0];
+        n = countNeighborsInBounds(0, 0, currBoard, false, true, false, true);
         nextBoard[0][0] = nextGenerationState(self, n);
 
         // Cell bottom,0
         self = currBoard[bottom][0];
-        n = 0;
-        n += currBoard[bottom  ][1];
-        n += currBoard[bottom-1][1];
-        n += currBoard[bottom-1][0];
+        n = countNeighborsInBounds(bottom, 0, currBoard, false, true, true, false);
         nextBoard[bottom][0] = nextGenerationState(self, n);
 
         // Cell bottom,right
         self = currBoard[bottom][right];
-        n = 0;
-        n += currBoard[bottom  ][right -1];
-        n += currBoard[bottom-1][right -1];
-        n += currBoard[bottom-1][right   ];
+        n = countNeighborsInBounds(bottom, right, currBoard, true, false, true, false);
         nextBoard[bottom][right] = nextGenerationState(self, n);
 
         // Cell 0,right
         self = currBoard[0][right];
-        n = 0;
-        n += currBoard[0][right -1];
-        n += currBoard[1][right -1];
-        n += currBoard[1][right   ];
+        n = countNeighborsInBounds(0, right, currBoard, true, false, false, true);
         nextBoard[0][right] = nextGenerationState(self, n);
     }
 
