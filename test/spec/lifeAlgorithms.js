@@ -36,6 +36,15 @@ describe('life Algorithms', function () {
                         [0, 1, 0, 0, 0],
                         [0, 0, 0, 0, 0]];
 
+  var zeroD       = [[1]],
+      zeroDResult = [[0]];
+
+  var vertical       = [[1],[1],[1]],
+      verticalResult = [[0],[1],[0]];
+
+  var horz       = [[1, 1, 1]],
+      horzResult = [[0, 1, 0]];
+
   listOfAlgorithms.forEach(function (algorithm) {
 
     describe('.' + algorithm, function () {
@@ -71,6 +80,30 @@ describe('life Algorithms', function () {
         game5[algorithm]();
 
         expect(game5.currentBoard).to.eql(boardResult5by5);
+      });
+
+      it('should correctly handle a single cell', function () {
+        var game = new WORLD.Game(1);
+        game.currentBoard = zeroD;
+        game[algorithm]();
+
+        expect(game.currentBoard).to.eql(zeroDResult);
+      });
+
+      it('should correctly handle a 1D vertical board', function () {
+        var game = new WORLD.Game(3,1);
+        game.currentBoard = vertical;
+        game[algorithm]();
+
+        expect(game.currentBoard).to.eql(verticalResult);
+      });
+
+      it('should correctly handle a 1D horizontal board', function () {
+        var game = new WORLD.Game(1,3);
+        game.currentBoard = horz;
+        game[algorithm]();
+
+        expect(game.currentBoard).to.eql(horzResult);
       });
     });
 
