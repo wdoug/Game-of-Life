@@ -2,6 +2,11 @@ body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+#page-title {
+    text-align: center;
+    width: 100%;
+}
+
 h1 {
     font-weight: 100;
     display: inline-block;
