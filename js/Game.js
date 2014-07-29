@@ -8,14 +8,21 @@
 var WORLD = WORLD || {};
 
 (function () {
+    // Since javascript doesn't have multidimensional array structures,
+    // the game board is implemented as an array of arrays.
     // This function is needed so that the inner arrays are defined
     function initializeBoard(board, height) {
         var i;
         for (i = 0; i < height; ++i) {
+            // Since javascript arrays are hashs that support
+            // sparse arrays, the inner arrays can be defined with either
+            // [] or Array(width)
             board[i] = [];
         }
     }
 
+    // Make sure the input size for the board is a positive number
+    // between 1 and infinity
     function checkIfValidBoardSize(val) {
         var num = parseInt(val);
         if (!isNaN(num) && isFinite(num) && num > 0) {
@@ -65,6 +72,9 @@ var WORLD = WORLD || {};
         }
     };
 
+    // Option to pass in argument for this so that the loop can still
+    // reference the Game instance's width and height, while having
+    // the fnEach callback called in a seperate context
     WORLD.Game.prototype.mapWholeBoard = function (fnEach, thisArg) {
         var i, j, w, h, val, returnedVal;
         thisArg = thisArg || this;
