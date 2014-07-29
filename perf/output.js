@@ -14,7 +14,7 @@ var perf = perf || {};
   function noop() {}
 
   function setStatus(text) {
-    $status.html(text);
+    $status.html('Status: ' + text);
   }
 
 
@@ -42,7 +42,7 @@ var perf = perf || {};
     },
     complete: function (suiteId) {
       var $suiteDiv = $('#'+suiteId);
-      $suiteDiv.find('.result').html(this.filter('fastest').pluck('name') + ' is the fastest');
+      $suiteDiv.find('.result').html('<p>' + this.filter('fastest').pluck('name') + ' is the fastest </p>');
     }
   };
 
