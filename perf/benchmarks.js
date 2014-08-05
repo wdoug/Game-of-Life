@@ -17,22 +17,9 @@ var perf = perf || {};
 
 (function () {
 
-  var seedOptions = {
-    setup: function () {
-      var game = new WORLD.Game(5);
-    }
-  };
-
-  perf.addSuite('Seed', {
-    seedZero: function () {
-      game.seedZero();
-    },
-    seedRandom: function () {
-      game.seedRandom();
-    }
-  }, seedOptions);
-
-
+/*
+* Algorithms
+*/
   var algorithmOptions = {
     setup: function () {
       var game = new WORLD.Game(5);
@@ -51,7 +38,7 @@ var perf = perf || {};
     edgesSeparate: function () {
       game.algEdgesSeparate();
     }
-  }, seedOptions);
+  }, algorithmOptions);
 
 
   var largerBoardOptions = {
@@ -69,6 +56,37 @@ var perf = perf || {};
       game.algEdgesSeparate();
     }
   }, largerBoardOptions);
+
+
+/*
+* Rendering
+*/
+  var rendering5x5Options = {
+    setup: function () {
+      var game = new WORLD.Game(5);
+      game.currentBoard =  [[0, 1, 0, 0, 0],
+                            [1, 0, 0, 1, 1],
+                            [1, 1, 0, 0, 1],
+                            [0, 1, 0, 0, 0],
+                            [1, 0, 0, 0, 1]];
+
+      var pre = document.createElement('pre');
+
+      var canvas = document.createElement('canvas');
+      canvas.setAttribute('width',20);
+      canvas.setAttribute('height',20);
+      game.setCanvas(canvas);
+    }
+  };
+
+  perf.addSuite('Game rendering 5x5', {
+    'text': function () {
+      pre.innerHTML = game.stringify();
+    },
+    'canvas (20x20 pixel size)': function () {
+      game.render();
+    }
+  }, rendering5x5Options);
 
 
   perf.renderSuites();

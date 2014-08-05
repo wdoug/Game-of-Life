@@ -8,15 +8,28 @@
 var WORLD = WORLD || {};
 
 (function () {
-    var game = new WORLD.Game(50);
-    var display = document.getElementById('text-board-display');
+    var game = new WORLD.Game(50),
+        display = document.getElementById('text-board-display'),
+        renderType = 'canvas',
+        $canvas = $('#canvas-board');
 
     game.seedRandom();
 
     // @TODO: Look into swapping this with the requestAnimationFrame api
     setInterval(function () {
         game.tick();
-        display.innerHTML = game.stringify();
+
+        switch (renderType) {
+            case 'text':
+                display.innerHTML = game.stringify();
+                break;
+            case 'canvas':
+                game.render();
+                break;
+            default:
+                game.render();
+        }
+
     }, 50);
 
 
@@ -43,5 +56,18 @@ var WORLD = WORLD || {};
             }
         }
 
+
+        renderType = $('#render-mode').val().toLowerCase();
+
+        switch (renderType) {
+            case 'text':
+                $(display).removeClass('hidden');
+                $canvas.addClass('hidden');
+                break;
+            case 'canvas':
+                $(display).addClass('hidden');
+                $canvas.removeClass('hidden');
+                break;
+        }
     });
 })();

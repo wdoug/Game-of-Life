@@ -30,8 +30,16 @@
             <label for="new-width">Width:*</label>
             <input id="new-width" type="number" min="1" required>
 
+            <label for="render-mode">Render Mode:</label>
+            <select id="render-mode">
+                <option selected>Canvas</option>
+                <option>Text</option>
+            </select>
+
             <button id="new-board-btn">New Board</button>
         </form>
+
+        <canvas id="canvas-board" width="400" height="400"></canvas>
 
         <pre id="text-board-display"></pre>
 
@@ -56,6 +64,7 @@
         <script src="js/Game.js"></script>
         <script src="js/seed.js"></script>
         <script src="js/lifeAlgorithms.js"></script>
+        <script src="js/render.js"></script>
 
         <script src="js/main.js"></script>
     </body>

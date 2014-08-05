@@ -75,7 +75,7 @@ var WORLD = WORLD || {};
     // Option to pass in argument for this so that the loop can still
     // reference the Game instance's width and height, while having
     // the fnEach callback called in a seperate context
-    WORLD.Game.prototype.mapWholeBoard = function (fnEach, thisArg) {
+    WORLD.Game.prototype.mapWholeBoard = function (fnEach, thisArg, disableUpdate) {
         var i, j, w, h, val, returnedVal;
         thisArg = thisArg || this;
 
@@ -92,7 +92,9 @@ var WORLD = WORLD || {};
                 }
             }
         }
-        this.updateBoard();
+        if (!disableUpdate) {
+            this.updateBoard();
+        }
     };
 
 

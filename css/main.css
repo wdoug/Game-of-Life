@@ -105,9 +105,13 @@ body {
     margin-right: 10px;
 }
 
+#canvas-board {
+    border: 2px solid #333;
+}
 
-
-
+.hidden {
+    display: none;
+}
 
 
 
